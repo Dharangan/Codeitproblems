@@ -1,0 +1,204 @@
+# 1st prblm
+
+s=input()
+for i in range(len(s)):
+  for j in range(i+1,len(s)):
+    if s[i]==s[j]:
+      print('no')
+      exit(0)
+print('yes')
+
+# 2nd prblm
+
+a,b=map(str,input().split())
+if len(a)==len(b):
+  co=0
+  for i in a:
+    if a.count(i)==b.count(i):
+      co+=1
+  if co==len(a):
+    print('yes')
+  else:
+    print('no')
+else:
+  print('no')
+  
+# 3rd prblm  
+s=input()
+s=s.strip()
+s=s.replace(' ','%20')
+print(s)
+
+
+# 4th prblm
+
+def func(s):
+  s=list(s)
+  s.sort()
+  a=""
+  for i in s:
+    if i!=' ':  a+=i
+  co=0
+  for i in a:
+    if a.count(i)%2==1: co+=1
+  if co>1: print('no')
+  else: print('yes')
+
+func(input())
+
+
+# 5th prblm
+
+s1,s2=map(str,input().split())
+edit=0
+d=len(s1)-len(s2)
+if abs(d)>1:
+  print('no')
+elif abs(d)==1:
+  l=min(len(s1),len(s2))
+  for i in range(l):
+    if s1[i]!=s2[i]:
+      edit+=1
+      if edit>1:
+        print('no')
+        exit()
+  print('yes')
+else:
+  for i in range(len(s1)):
+    if s1[i]!=s2[i]:
+      edit+=1
+      if edit>1:
+        print('no')
+        exit()
+  if edit==1: print('yes')
+  else:  print('no')
+    
+# 6 prblm
+
+def func(s):
+  ans=""
+  co=1
+  for i in range(len(s)):
+    if  i+1<len(s) and s[i]==s[i+1]:
+      co+=1
+    else:
+      ans+=s[i]+str(co)
+      co=1
+  print(ans)
+
+func(input())
+
+# 7 th prblm
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int r,c,i,j;
+    scanf("%d %d",&r,&c);
+    int a[r][c];
+    int ans[c][r];
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+            ans[j][r-i-1]=a[i][j];
+        }
+    }
+    for(i=0;i<c;i++)
+    {
+        for(j=0;j<r;j++)
+        {
+            printf("%d ",ans[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+
+# 8th prblm
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int r,c,i,j,k,i1=0,k1;
+    int b[10000];
+    scanf("%d %d",&r,&c);
+    int a[r][c];
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+            
+        }
+       
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+           printf("%d ",a[i][j]);
+            
+        }
+        printf("\n");
+       
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(a[i][j]==0)
+            {
+                b[i1]=j;
+                i1++;
+                for(k=0;k<c;k++)
+                {
+                    a[i][k]=0;
+                }
+                break;
+            }
+        }
+    }
+    for(k1=0;k1<i1;k1++)
+    {
+        for(i=0;i<r;i++)
+        {
+            a[i][b[k1]]=0;
+        }
+    }
+    printf("\n\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+# 9th prblm
+
+def func(s1,s2):
+  if len(s1)!=len(s2):
+    print('no')
+  else:
+    s1=s1+s1
+    if s2 in s1:
+      print('yes')
+    else:
+      print('no')
+
+s1,s2=map(str,input().split())
+func(s1,s2)
