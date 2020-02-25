@@ -80,8 +80,9 @@ void printlist(struct node *t)
 int main()
 {
     int i,n;
-    scanf("%d",&n);
     printf("Enter the lenght of the list : ");
+    scanf("%d",&n);
+    
     struct Node *head;
     head=NULL;
     printf("Ener the node values : \n");
