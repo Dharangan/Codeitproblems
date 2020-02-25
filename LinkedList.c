@@ -81,8 +81,10 @@ int main()
 {
     int i,n;
     scanf("%d",&n);
+    printf("Enter the lenght of the list : ");
     struct Node *head;
     head=NULL;
+    printf("Ener the node values : \n");
     for(i=0;i<n;i++)
     {
         int k;
@@ -90,6 +92,7 @@ int main()
         head=append(head,k);
     }
     removeduplicates(head);
+    printf("After removing the duplicates ....\n");
     printlist(head);
     return 0;
 }
