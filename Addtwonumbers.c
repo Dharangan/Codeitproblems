@@ -33,14 +33,14 @@ void reverse(struct node* head)
 { 
     struct node* prev = NULL; 
     struct node* current = head; 
-    struct node* next = NULL; 
+    struct node* nexts = NULL; 
     while (current != NULL) { 
-        next = current->next; 
+        nexts = current->next; 
         current->next = prev; 
         prev = current; 
-        current = next; 
+        current = nexts; 
     } 
-    head= prev; 
+    head = prev; 
 } 
 void sumOflists(struct node *h1, struct node *h2)
 {
@@ -62,15 +62,15 @@ void sumOflists(struct node *h1, struct node *h2)
     {
         sum=carry+temp->data;
         head3=append(head3,sum%10);
-        carry=sum>9 ? 1:0;
+        carry= sum >9 ? 1:0;
         temp=temp->next;
     }
     if(carry)
     {
         head3=append(head3,1);
     }
-    //printlist(head3);
-    //reverse(head3);
+   // printlist(head3);
+    reverse(head3);
     printlist(head3);
 }
 
