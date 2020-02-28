@@ -85,7 +85,7 @@ int main()
     
     struct Node *head;
     head=NULL;
-    printf("Ener the node values : \n");
+    printf("Enter the node values : \n");
     for(i=0;i<n;i++)
     {
         int k;
